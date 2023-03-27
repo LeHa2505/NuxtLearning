@@ -15,7 +15,7 @@ export default {
     // this.$on("click", (msg) => {
     //   this.msg = msg;
     // })
-    this.$nuxt.$on('edit', (message) => {
+    this.$nuxt.$on('msg-change', (message) => {
       this.msg = message
     })
   }

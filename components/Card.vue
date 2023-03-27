@@ -27,7 +27,7 @@ export default {
   methods: {
     callFunction() {
       this.message = "Message changed";
-      this.$nuxt.$emit('edit', this.message);
+      this.$nuxt.$emit('msg-change', this.message);
     },
   },
 };
