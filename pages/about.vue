@@ -1,8 +1,6 @@
 <template>
   <section class="container">
     <h1>About our Nuxt's</h1>
-    <p class="subheading">They're juicy and stuff.</p>
-
     <p>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates sed
       tenetur quas! Laudantium odio consectetur, quia dolore veritatis quae quam
@@ -13,8 +11,8 @@
       <hello :text="text">
         <p>Hello part</p>
       </hello>
-      <b-button variant="outline-primary" @click="changeName">Button</b-button>
     </div>
+    <b-button variant="outline-primary" @click="changeName">Button</b-button>
 
     <card>
       <h4 slot="header">Card header</h4>

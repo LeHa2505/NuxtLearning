@@ -5,7 +5,8 @@
     </header>
 
     <div class="card-content">
-      <slot :content="message"></slot>
+      <slot><p>{{content}}</p></slot>
+       <p>Something</p>
       <b-button variant="outline-primary" @click="callFunction"
         >Button</b-button
       >
@@ -19,9 +20,13 @@
 
 <script>
 export default {
+  props: {
+    content: String
+  },
   data() {
     return {
       message: "Message from child",
+      mess: ''
     };
   },
   methods: {

@@ -8,11 +8,30 @@
       tenetur quas! Laudantium odio consectetur, quia dolore veritatis quae quam
       nobis aperiam saepe, modi quibusdam facere tenetur omnis earum molestiae.
     </p>
+
+    <b-button variant="outline-primary" @click="changeMess">Button</b-button>
+
+    <div>
+      <card :content="mess">
+        <h4 slot="header">Card header</h4>
+        <h4 slot="footer">Card footer</h4>
+      </card>
+    </div>
   </section>
 </template>
 
 <script>
+import Card from "../components/Card.vue";
+
 export default {
+  components: { Card },
+  data() {
+    return {
+      mess: "Hello",
+      title: "indexPage",
+      id: "123",
+    };
+  },
   name: "IndexPage",
   head() {
     // Set Meta Tags for this Page
@@ -24,11 +43,10 @@ export default {
       ],
     };
   },
-  data() {
-    return {
-      title: "indexPage",
-      id: "123",
-    };
+  methods: {
+    changeMess(){
+      this.mess = '123'
+    }
   },
 };
 </script>
