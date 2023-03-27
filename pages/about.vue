@@ -10,15 +10,16 @@
     </p>
 
     <div>
-      <hello>
-        <p>Helloooooooooooooooo</p>
+      <hello :text="text">
+        <p>Hello part</p>
       </hello>
+      <b-button variant="outline-primary" @click="changeName">Button</b-button>
     </div>
 
-    <card >
+    <card>
       <h4 slot="header">Card header</h4>
       <p slot-scope="props" v-text="props.content"></p>
-      <h4 slot="footer">{{content}}</h4>  
+      <h4 slot="footer">{{ content }}</h4>
     </card>
   </section>
 </template>
@@ -28,10 +29,14 @@ import Card from "../components/Card.vue";
 import Hello from "../components/Hello.vue";
 export default {
   components: { Hello, Card },
-  props: {
-    content: String,
+  props: {},
+  data() {
+    return {
+      text: "Text here",
+    };
   },
-  created(){
+  created() {
+    this.content = "From about page";
   },
   head() {
     return {
@@ -43,7 +48,10 @@ export default {
     };
   },
   methods: {
-  }
+    changeName() {
+      this.text = "Text has been changed";
+    },
+  },
   // transitions: 'bounce'
 };
 </script>
